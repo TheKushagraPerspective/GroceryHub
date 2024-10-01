@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.splash-screen {
+    height: 100vh;
+    background-image: url("../assets/splash-img2.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    animation: zoomOut 3s ease-in forwards; /* Apply the zoom-out animation */
+}
+
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.2); /* Start with the image zoomed in */
+  }
+  50% {
+    transform: scale(1.1); /* Start with the image zoomed in */
+  }
+  100% {
+    transform: scale(1); /* End at normal size */
+  }
+}
+
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add a dark overlay on top of the image */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.splash-text {
+    font-size: 2rem;
+}
+
+.explore-app {
+    font-size: 1.5rem;
+    border-radius: 8%;
+    padding: 10px;
+}
+
+.explore-app button {
+    background-color: green;
+}
+
+.explore-app button a {
+    text-decoration: none;
+    color: #DDDDDD;
+}
+

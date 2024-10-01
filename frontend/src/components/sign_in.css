@@ -1,0 +1,127 @@
+.sign-in-container {
+    background-color: transparent; /* Ensure the container doesn’t add transparency */
+    width: 100%;
+    height: 100vh;
+    background-image: url("../assets/sign_in.webp");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    background-color: rgb(219, 215, 215); /* Or another color */
+}
+
+.sign-in-text {
+    width: 50%;
+    padding-right: 40px;
+}
+
+.sign-in-text h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.sign-in-text p {
+    margin-top: 20px;
+    color: #555;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons i {
+    font-size: 24px;
+    color: #333;
+    margin-right: 15px;
+}
+
+.sign-in-form {
+    width: 50%;    
+}
+
+.sign-in-form h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sign-in-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.sign-in-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 10px;
+}
+
+.sign-in-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in-btn:hover {
+    background-color: #e68900;
+}
+  
+.lost-password {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #333;
+}
+  
+.lost-password:hover {
+    text-decoration: underline;
+}
+
+.registeration-form {
+    text-decoration: none;
+    color: #a7a3a3;
+}
+
+.registeration-form:hover {
+    color: green;
+}
