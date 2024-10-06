@@ -18,7 +18,7 @@ const SplashScreen = () => {
                             </div>
                             <div className="explore-app">
                                 <button className="explore-app">
-                                    <a href="sign_in">Explore App</a>
+                                    <a href="sign_in">Get Started</a>
                                 </button>
                             </div>
                     </div>

@@ -2,7 +2,7 @@
     background-color: transparent; /* Ensure the container doesn’t add transparency */
     width: 100%;
     height: 100vh;
-    background-image: url("../assets/sign_in.webp");
+    background-image: url("../../assets/sign_in.webp");
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -11,7 +11,7 @@
 
 .form {
     margin-top: 150px;
-    margin-bottom: 150px;
+    margin-bottom: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,8 +19,8 @@
     max-width: 900px;
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    background-color: rgb(219, 215, 215); /* Or another color */
+    padding: 80px;
+    background-color: rgb(172, 187, 217); /* Or another color */
 }
 
 .sign-in-text {

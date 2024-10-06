@@ -53,13 +53,25 @@
 }
 
 .explore-app {
-    font-size: 1.5rem;
-    border-radius: 8%;
+    font-size: 1.3rem;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     padding: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: none;
+}
+
+.explore-app button:hover {
+  border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    transform: scale(1.1); /* Scale the button */
+    background-color: #28a745; /* Darker green on hover */
 }
 
 .explore-app button {
-    background-color: green;
+  background-color: #136836; /* Initial green background */
 }
 
 .explore-app button a {
