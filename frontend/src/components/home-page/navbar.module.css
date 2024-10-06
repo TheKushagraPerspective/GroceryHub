@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.border {
+    border: 1px solid transparent;
+}
+
+.border:hover {
+    border: 1px solid white;
+}
+
+
+/* header */
+.navbar {
+    background-color: #000000;
+    color: #FFFFFF;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.app-logo {
+    height: 53px;
+    width: 110px;
+    padding: 4px;
+}
+
+.logo {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: green;
+}
+
+
+.nav-address {
+    padding: 8px;
+}
+
+.add-icon {
+    display: flex;
+}
+
+
+.add-first {
+    color: #CCCCCC;
+    font-size: 0.85rem;
+    margin-left: 15px;
+}
+
+.add-second {
+    color: #FFFFFF;
+    font-size: 1rem;
+    margin-left: 3px;
+}
+
+
+.nav-search {
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    width: 820px !important;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.search-select {
+    width: 50px;
+    padding: 5px;
+    background-color: #f3f3f3;
+    text-align: center;
+    border: none;
+}
+
+.search-input {
+    border: none;
+    width: 100%;     /* 100% means it will take all width that will left after setting icon and all select button */
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    color: #0f1111;
+    background-color: #febd69;
+    font-size: 1.2rem;
+}
+
+.nav-search:hover {
+    border: 2px solid orange;
+}
+
+.nav-signout {
+    padding: 8px;
+}
+
+
+.sign-out {
+    font-size: 0.7rem;
+}
+
+.nav-list {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.nav-contact {
+    padding: 15px;
+}
+
+.contact-details {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the link color consistent with the rest of the text */
+}
+
+.nav-mode {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem; /* Adjust padding for better responsiveness */
+}
+
+.mode-text {
+    font-size: 1rem;
+}
+
+.nav-mode-icon {
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+
+.nav-mode-icon i {
+    color: white;
+}
+
+
+
+.panel {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+    background-color: #232f3e;
+    color: #FFFFFF;
+    padding-left: 10px;
+    padding-right:10px;
+}
+
+.panel-all {
+    display: flex;
+    width: 5%;
+    padding: 8px 9px;
+}
+
+.panel-all i {
+    margin-right: 5px;
+}
+
+
+.panel-text-1 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.panel-options p{ 
+    display: inline;
+    margin-left: 15px;
+    font-size: 0.9rem;
+    padding: 8px 9px;
+}
+
+
+.panel-options {
+    width: 75%;
+}
+
+
+.panel-deal {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 8px 9px;
+}
+
+

@@ -6,6 +6,7 @@ import SplashScreen from './components/splashScreen';
 import SignIn from './components/sign-in/sign_in';
 import Register from './components/register/register';
 import Home from './components/home-page/home';
+import Contact from './components/contact-page/contact';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/register" element={<Register />} />
 
         <Route path='/home' element={<Home />} />
+
+        <Route path='/contact' element={<Contact />} />
 
       </Routes>
     </Router>

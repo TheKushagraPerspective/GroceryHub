@@ -72,7 +72,7 @@ const Register = () => {
                     </form>
 
                     <div className={styles["to-sign-in"]}>
-                        <p>If u have already an account? <Link to="/sign_in" className={styles['go-to-sign-in']}>SignIn here</Link></p>
+                        <p>If u already have an account? <Link to="/sign_in" className={styles['go-to-sign-in']}>SignIn here</Link></p>
                     </div>
 
                 </div>

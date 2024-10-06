@@ -1,0 +1,85 @@
+import React , {useState} from 'react';
+import {Link} from 'react-router-dom';
+import styles from './navbar.module.css';
+
+
+const Navbar = () => {
+    
+    
+    return(
+        <>
+            <div className={styles["header"]}>
+                <div className={styles["navbar"]}>
+
+                        {/* app logo */}
+                        <div className={styles["app-logo"]}>
+                            <div className={styles["logo"]}>
+                                <i className="fa fa-shopping-basket" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        {/* <!-- box 2 --> */}
+                    <div className={`${styles.border} ${styles["nav-address"]}`}>
+                        <p className={styles["add-first"]}>Deliver To</p>
+                        <div className={styles["add-icon"]}>
+                            <i className="fa fa-map-marker" aria-hidden="true"></i>
+                            <p className={styles["add-second"]}>India</p>
+                        </div>
+                    </div>
+
+                    {/* <!-- box 3 --> */}
+                    <div className={styles["nav-search"]}>
+                        <select className={styles["search-select"]}>
+                            <option value="All">All</option>
+                        </select>
+                        <input type="text" placeholder="Search GroceryHub" className={styles["search-input"]}/>
+                        <div className={styles["search-icon"]}>
+                            <i className="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                {/* <!-- box 4 --> */}
+                    <div className={`${styles.border} ${styles["nav-signout"]}`}>
+                        <p><span className="sign-out">Hello,<Link to="/sign_in" className={styles["sign-out"]}>Sign out</Link> </span></p>
+                        <p className={styles["nav-list"]}>Accounts & Lists</p>
+                    </div>
+
+
+                    {/* <!-- box 5 --> */}
+                    <div className={`${styles.border} ${styles["nav-contact"]}`}>
+                        <Link to="/contact" className={styles["contact-details"]}>Contact Us</Link>
+                    </div>
+
+                    {/* <!-- box 7 -->  */}
+                   <div className={`${styles.border} ${styles["nav-mode"]}`}>
+                        <p><span className={styles['mode-text']}>Dark Mode</span></p>
+                        <div className={styles["nav-mode-icon"]}>
+                            <i className="fas fa-moon" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <!-- panel part --> */}
+                <div className={styles["panel"]}>
+                        <div className={`${styles.border} ${styles["panel-all"]}`}>
+                            <i className="fas fa-bars"></i> {/* Updated for Font Awesome 5+ */}
+                            <span className={styles["panel-text-1"]}>All</span>
+                        </div>
+
+                        <div className={styles["panel-options"]}>
+                            <p className={styles["border"]}>Today's Deals</p>
+                            <p className={styles["border"]}>Customer Service</p>
+                            <p className={styles["border"]}>Gift Cards</p>
+                            <p className={styles["border"]}>Sell</p>
+                        </div>
+
+                        <div className={`${styles.border} ${styles['panel-deal']}`}>
+                            <p>Shop the offers</p>
+                        </div>
+                </div>
+            </div>
+        </>
+    );
+}
+
+export default Navbar;
