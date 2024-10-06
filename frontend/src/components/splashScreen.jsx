@@ -14,7 +14,8 @@ const SplashScreen = () => {
                 <div className="overlay">
                     <div className="splash-container">
                             <div className="splash-text">
-                                <h1>Welcome to our App</h1>
+                                <h1>Welcome to our</h1>
+                                <h3 className='slide-in'>grocery Hub</h3>
                             </div>
                             <div className="explore-app">
                                 <button className="explore-app">

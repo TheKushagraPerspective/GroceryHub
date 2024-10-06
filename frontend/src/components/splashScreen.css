@@ -13,16 +13,13 @@
     justify-content: center;
     align-items: center;
     color: #FFFFFF;
-    animation: zoomOut 3s ease-in forwards; /* Apply the zoom-out animation */
+    animation: zoomOut 3s ease-in forwards; 
 }
 
 
 @keyframes zoomOut {
   0% {
     transform: scale(1.2); /* Start with the image zoomed in */
-  }
-  50% {
-    transform: scale(1.1); /* Start with the image zoomed in */
   }
   100% {
     transform: scale(1); /* End at normal size */
@@ -50,7 +47,32 @@
 
 .splash-text {
     font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* To hide the overflow during the animation */
 }
+
+.splash-text h3 {
+  color: greenyellow;
+}
+
+.slide-in {
+  animation: slideIn 3s forwards; /* Adjust the duration as needed */
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%); /* Start from outside the left */
+      opacity: 0; /* Start as invisible */
+  }
+  to {
+      transform: translateX(0); /* End at its original position */
+      opacity: 1; /* Fade in */
+  }
+}
+
 
 .explore-app {
     font-size: 1.3rem;
