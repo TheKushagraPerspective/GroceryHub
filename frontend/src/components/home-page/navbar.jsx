@@ -51,10 +51,10 @@ const Navbar = () => {
                     </div>
 
                     {/* <!-- box 7 -->  */}
-                   <div className={`${styles.border} ${styles["nav-mode"]}`}>
-                        <p><span className={styles['mode-text']}>Dark Mode</span></p>
+                   <div className={`${styles.border} ${styles["nav-mode"]}`} >
+                        <p><span className={styles['mode-text']}>Cart</span></p>
                         <div className={styles["nav-mode-icon"]}>
-                            <i className="fas fa-moon" aria-hidden="true"></i>
+                            <Link to="/cart" className='shopping-cart'><i class="fa fa-cart-plus" aria-hidden="true"></i></Link>
                         </div>
                     </div>
                 </div>

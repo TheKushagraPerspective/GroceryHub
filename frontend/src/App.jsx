@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import './App.css';
 
@@ -9,6 +9,11 @@ import Home from './components/home-page/home';
 import Contact from './components/contact-page/contact';
 
 function App() {
+
+
+  
+
+
   return (
     <Router>
       <Routes>

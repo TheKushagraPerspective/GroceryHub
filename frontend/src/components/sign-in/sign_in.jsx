@@ -11,7 +11,7 @@ const SignIn = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('/sign_in', {
+            const response = await fetch('http://localhost:2000/sign_in', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

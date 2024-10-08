@@ -1,5 +1,6 @@
 const express = require('express'); // Import Express
 const router = express.Router(); // Initialize Router
+const SignUp = require("../models/sign_up_model");
 
 // Route to handle user sign-in
 router.post("/sign_in" , async (req , res) => {
@@ -8,9 +9,8 @@ router.post("/sign_in" , async (req , res) => {
     try{
 
         // Check if user exists in the database by email and password
-        const user = await User.findMany({
-            email : email,
-            password : password
+        const user = await SignUp.findOne({
+            email : email
         })
 
         if(user) {
