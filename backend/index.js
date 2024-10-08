@@ -5,6 +5,7 @@ const app = express();
 const path = require('path');
 const cors = require('cors');  // Import CORS
 const PORT = process.env.PORT || 2000; // Use || for default value
+const mongoose = require("mongoose");
 
 
 
@@ -22,20 +23,16 @@ app.use(bodyparser.urlencoded({ extended: true })); // To parse URL-encoded data
 
 // Enable CORS for all routes
 app.use(cors({
-    origin: 'http://localhost:2000',  // Allow only your React app's origin
+    origin: 'http://localhost:5173',  // Allow only your React app's origin
 }));
 
 
-const mongoose = require("mongoose");
 
 // Replace the URI with your own MongoDB connection string
-const DB_URI = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
-mongoose.connect(DB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log("MongoDB is connected"))
-.catch(err => console.log("Error connecting to MongoDB: ", err));
+mongoose.connect(process.env.MONGODB_URL)
+.then(() => console.log('MongoDB connected successfully'))
+.catch(err => console.error('MongoDB connection error:', err));
+
 
 
 

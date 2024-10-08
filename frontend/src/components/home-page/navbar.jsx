@@ -54,7 +54,7 @@ const Navbar = () => {
                    <div className={`${styles.border} ${styles["nav-mode"]}`} >
                         <p><span className={styles['mode-text']}>Cart</span></p>
                         <div className={styles["nav-mode-icon"]}>
-                            <Link to="/cart" className='shopping-cart'><i class="fa fa-cart-plus" aria-hidden="true"></i></Link>
+                            <Link to="/cart" className='shopping-cart'><i className="fa fa-cart-plus" aria-hidden="true"></i></Link>
                         </div>
                     </div>
                 </div>
