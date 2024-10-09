@@ -11,6 +11,12 @@ const Navbar = () => {
         localStorage.removeItem('token'); // Remove the token
         navigate('/sign_in');
     }
+
+
+
+    const handleOnHomeClick = () => {
+        navigate('/home');
+    }
     
     
     return(
@@ -74,6 +80,7 @@ const Navbar = () => {
                         </div>
 
                         <div className={styles["panel-options"]}>
+                            <p className={styles["border"]} onClick={handleOnHomeClick}>Home</p>
                             <p className={styles["border"]}>Today's Deals</p>
                             <p className={styles["border"]}>Customer Service</p>
                             <p className={styles["border"]}>Gift Cards</p>

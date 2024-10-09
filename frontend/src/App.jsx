@@ -8,6 +8,8 @@ import Register from './components/register/register';
 import Home from './components/home-page/home';
 import Contact from './components/contact-page/contact';
 import ProtectedRoute from './components/protectedRoute';    // Import the ProtectedRoute
+import OilAndRefined from './components/products/oil_and_refined';
+import GaramMasale from './components/products/garam_masale';
 
 function App() {
 
@@ -28,6 +30,12 @@ function App() {
         <Route path='/home' element={ <ProtectedRoute> <Home /> {/* Protected component */} </ProtectedRoute> } />
 
         <Route path='/contact' element={<Contact />} />
+
+        <Route path='/oil_and_refined' element={<OilAndRefined />} />
+
+        <Route path='/garam_masale' element={<GaramMasale />} />
+
+        <Route path='/main_kirana' element={<GaramMasale />} />
 
       </Routes>
     </Router>
