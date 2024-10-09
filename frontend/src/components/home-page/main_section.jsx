@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import {Link} from 'react-router-dom';
 import styles from './main_section.module.css';
 
-import bgImg1 from '../../assets/oil-refined.webp';
+import bgImg1 from '../../assets/';
 
 
 
