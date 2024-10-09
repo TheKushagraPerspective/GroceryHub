@@ -4,7 +4,7 @@ const SignUp = require("../models/sign_up_model");// Import your user schema
 
 
 // Define the signup route
-router.post("/register" , async (req , res) => {
+router.post("/api/register" , async (req , res) => {
     const {name , email , password} = req.body;
 
     try{

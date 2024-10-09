@@ -1,5 +1,5 @@
 import React , {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link , useNavigate} from 'react-router-dom';
 import styles from './register.module.css'
 
 
@@ -8,12 +8,13 @@ const Register = () => {
     const [name , setName] = useState("");
     const [email , setEmail] = useState("");
     const [password , setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleOnSignUp = async (e) => {
         e.preventDefault();
 
         try{
-            const response = await fetch("/register" , {
+            const response = await fetch("http://localhost:2000/api/register" , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,6 +26,7 @@ const Register = () => {
 
             if (response.status === 201) {
                 alert('User registered successfully');
+                navigate("/sign_in");
                 // Redirect to the sign-in page or homepage
             } else {
                 alert(data.message || 'An error occurred');

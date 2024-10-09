@@ -3,7 +3,7 @@ const router = express.Router(); // Initialize Router
 const SignUp = require("../models/sign_up_model");
 
 // Route to handle user sign-in
-router.post("/sign_in" , async (req , res) => {
+router.post("/api/sign_in" , async (req , res) => {
     const {email , password} = req.body;    // Extract email and password from request body
 
     try{
