@@ -23,34 +23,29 @@ const Footer = ({ scrollToTop }) => {
                     <h3>Get to Know Us</h3>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Blog</a></li>
-                    <li><a href="#">About Amazon</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                    <li><a href="#">Amazon Devices</a></li>
-                    <li><a href="#">Amazon Science</a></li>
+                    <li><a href="#">About GroceryHub</a></li>
                 </ul>
 
                 <ul>
                     <h3>Make Money with Us</h3>
-                    <li><a href="#">Sell products on Amazon</a></li>
-                    <li><a href="#">Sell on Amazon business</a></li>
-                    <li><a href="#">Sell apps on Amazon</a></li>
+                    <li><a href="#">Sell products on GroceryHub</a></li>
+                    <li><a href="#">Sell on GroceryHub business</a></li>
+                    <li><a href="#">Sell apps on GroceryHub</a></li>
                     <li><a href="#">Become an Affiliate</a></li>
-                    <li><a href="#">Host an Amazon Hub</a></li>
-                    <li><a href="#">Self-Publish with Us</a></li>
-                    <li><a href="#"> See More Make Money with Us</a></li>
+                    <li><a href="#">Host an Grocery Hub</a></li>
                 </ul>
 
                 <ul>
-                    <h3>Amazon Payment Products</h3>
-                    <li><a href="#">Amazon Business Card</a></li>
+                    <h3>GroceryHub Payment Products</h3>
+                    <li><a href="#">GroceryHub Business Card</a></li>
                     <li><a href="#">Shop with Points</a></li>
                     <li><a href="#">Reload Your Balance</a></li>
-                    <li><a href="#">Amazon Currency Converter</a></li>
+                    <li><a href="#">GroceryHub Currency Converter</a></li>
                 </ul>
 
                 <ul>
                     <h3>Let Us Help You</h3>
-                    <li><a href="#">Amazon and COVID-19</a></li>
+                    <li><a href="#">GroceryHub and COVID-19</a></li>
                     <li><a href="#">Your Account</a></li>
                     <li><a href="#">Your Orders</a></li>
                     <li><a href="#">Shipping Rates & Policies</a></li>
@@ -60,7 +55,9 @@ const Footer = ({ scrollToTop }) => {
             </div>
 
             <div className={styles["foot-panel3"]}>
-                    <div className={styles["logo"]}></div>
+                    <div className={styles["logo"]}>
+                        <i className="fa fa-shopping-basket" aria-hidden="true"></i>
+                    </div>
             </div>
 
             <div className={styles["foot-panel4"]}>
@@ -72,7 +69,7 @@ const Footer = ({ scrollToTop }) => {
                     </div>
 
                     <div className={styles["copyright"]}>
-                        © 1996-2024, Amazon.com, Inc. or its affiliates
+                        © 1996-2024, GroceryHub.com, Inc. or its affiliates
                     </div>
             </div>
       </footer>

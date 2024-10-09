@@ -22,6 +22,9 @@ const SignIn = () => {
             const data = await response.json();
 
             if (response.status === 200) {
+                // Save the token in localStorage or state management
+                localStorage.setItem('token', data.token);
+                
                 alert("Sign-in successful");
                 navigate("/home");
             } else if (response.status === 401) {

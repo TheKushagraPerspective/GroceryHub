@@ -1,9 +1,16 @@
 import React , {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link , useNavigate} from 'react-router-dom';
 import styles from './navbar.module.css';
 
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
+    const handleOnSignOut = () => {
+        localStorage.removeItem('token'); // Remove the token
+        navigate('/sign_in');
+    }
     
     
     return(
@@ -40,7 +47,7 @@ const Navbar = () => {
 
                 {/* <!-- box 4 --> */}
                     <div className={`${styles.border} ${styles["nav-signout"]}`}>
-                        <p><span className="sign-out">Hello,<Link to="/sign_in" className={styles["sign-out"]}>Sign out</Link> </span></p>
+                        <p><span className="sign-out">Hello,<button onClick={handleOnSignOut}>sign out</button></span></p>
                         <p className={styles["nav-list"]}>Accounts & Lists</p>
                     </div>
 

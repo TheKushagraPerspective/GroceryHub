@@ -1,5 +1,6 @@
 require('dotenv').config(); // Load environment variables from .env file
 
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -78,8 +79,13 @@ app.use("/api/sign_in" , async (req , res) => {
 
         if(user) {
             if(user.password === password) {
+
+                // Generate a token with userId
+                const token = jwt.sign({ userId: user._id }, 'SECRET_KEY');
+    
+
                 // If user exists, return a success response with user data
-                res.status(200).json({ message : "User signed in successfully" })
+                res.status(200).json({token , message : "User signed in successfully" })
             }
             else {
                 // If password is incorrect, return an error response

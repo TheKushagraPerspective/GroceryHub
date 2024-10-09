@@ -7,6 +7,7 @@ import SignIn from './components/sign-in/sign_in';
 import Register from './components/register/register';
 import Home from './components/home-page/home';
 import Contact from './components/contact-page/contact';
+import ProtectedRoute from './components/protectedRoute';    // Import the ProtectedRoute
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
 
         <Route path="/register" element={<Register />} />
 
-        <Route path='/home' element={<Home />} />
+        <Route path='/home' element={ <ProtectedRoute> <Home /> {/* Protected component */} </ProtectedRoute> } />
 
         <Route path='/contact' element={<Contact />} />
 

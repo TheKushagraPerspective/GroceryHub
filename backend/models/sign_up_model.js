@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-});
+}, { timestamps: true });
 
 // Create a model for the schema
 const SignUp = mongoose.model('SignUp', userSchema);
