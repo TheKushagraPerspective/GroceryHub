@@ -34,7 +34,7 @@ const MainSection = () => {
                         <div className={styles["box-content"]}>
                             <p className={styles["shop-section-content"]}>Refined Oil</p>
                             <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg1})`}}></div>
-                            <p><Link to={"/oil_and_refined"}>see more</Link></p>
+                            <p><Link to={"main_kirana/oil_and_refined"}>see more</Link></p>
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@ const MainSection = () => {
                         <div className={styles["box-content"]}>
                             <p className={styles["shop-section-content"]}>Cooking Oil</p>
                             <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg2})`}}></div>
-                            <p><Link to={"/oil_and_refined"}>see more</Link></p>
+                            <p><Link to={"main_kirana/oil_and_refined"}>see more</Link></p>
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ const MainSection = () => {
                         <div className={styles["box-content"]}>
                             <p className={styles["shop-section-content"]}>Garam Masala</p>
                             <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg3})`}}></div>
-                            <p><Link to={"/garam_masale"}>discover more</Link></p>
+                            <p><Link to={"main_kirana/garam_masale"}>discover more</Link></p>
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@ const MainSection = () => {
                         <div className={styles["box-content"]}>
                             <p className={styles["shop-section-content"]}>Recipe Masale</p>
                             <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg4})`}}></div>
-                            <p><Link to={"/garam_masale"}>discover more</Link></p>
+                            <p><Link to={"main_kirana/garam_masale"}>discover more</Link></p>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ const MainSection = () => {
                                 <div className={styles["box-content"]}>
                                     <p className={styles["shop-section-content"]}>Flour (Atta)</p>
                                     <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg5})`}}></div>
-                                    <p><Link to={"/main_kirana"}>see more</Link></p>
+                                    <p><Link to={"/main_kirana/Pulses"}>see more</Link></p>
                                 </div>
                             </div>
 
@@ -92,7 +92,7 @@ const MainSection = () => {
                                 <div className={styles["box-content"]}>
                                     <p className={styles["shop-section-content"]}>Pulses</p>
                                     <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg6})`}}></div>
-                                    <p><Link to={"/main_kirana"}>see more</Link></p>
+                                    <p><Link to={"/main_kirana/floor"}>see more</Link></p>
                                 </div>
                             </div>
 
@@ -101,7 +101,7 @@ const MainSection = () => {
                                 <div className={styles["box-content"]}>
                                     <p className={styles["shop-section-content"]}>Laundry Detergent (Surf)</p>
                                     <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg7})`}}></div>
-                                    <p><Link to={"/main_kirana"}>see more</Link></p>
+                                    <p><Link to={"/main_kirana/tea"}>see more</Link></p>
                                 </div>
                             </div>
 
@@ -110,7 +110,7 @@ const MainSection = () => {
                                 <div className={styles["box-content"]}>
                                     <p className={styles["shop-section-content"]}>Soap</p>
                                     <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg8})`}}></div>
-                                    <p><Link to={"/main_kirana"}>see more</Link></p>
+                                    <p><Link to={"/main_kirana/bakery"}>see more</Link></p>
                                 </div>
                             </div>
                     </div>
