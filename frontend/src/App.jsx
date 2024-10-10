@@ -8,8 +8,6 @@ import Register from './components/register/register';
 import Home from './components/home-page/home';
 import Contact from './components/contact-page/contact';
 import ProtectedRoute from './components/protectedRoute';    // Import the ProtectedRoute
-import OilAndRefined from './components/products/oil_and_refined';
-import GaramMasale from './components/products/garam_masale';
 import MainKirana from './components/products/main_kirana';
 
 function App() {

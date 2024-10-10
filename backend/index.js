@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 2000; // Use || for default value
 const mongoose = require("mongoose");
 const SignUp = require("./models/sign_up_model");// Import your user schema
 const Product=require("./models/product")
-
+const Cart=require("./models/cart")
+const Contact = require("./models/contact");
 // const bodyparser = require("body-parser");
 app.use(express.json()); // To parse JSON data
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded data
@@ -112,7 +113,7 @@ app.get("/api/product/:cat",async (req,res)=>{
 
 app.post("/add/product",async(req,res)=>{
      const {product_name,product_price,product_description,product_image,product_category,product_sub_category,product_country} = req.body;
-        console.log(req.body);
+        // console.log(req.body);
         // res.send(req.body);
     try{
         
@@ -128,6 +129,54 @@ app.post("/add/product",async(req,res)=>{
 
 })
 
+
+app.post("/api/contact" , async(req , res) => {
+    const {name , email , subject , message} = req.body;
+
+    try{
+        const newContactDetails = new Contact({name , email , subject , message});
+        await newContactDetails.save();
+        res.status(201).json({message : "Contact details saved successfully" , newContactDetails});
+    } catch(err) {
+        console.error('Error saving contact details:', err);
+        res.status(500).json({ message: 'Internal server error on contact api' });
+    }
+
+})
+
+
+
+
+app.post("/api/add/cart",async(req,res)=>{
+    const {user_id,product_id} = req.body;
+    let a=jwt.verify(user_id,'SECRET_KEY')
+    // console.log(a.userId);
+    // console.log(product_id);
+    try{
+
+        // Check if user exists in the database by email and password
+        const data = await Cart.findOne({
+            product_id:product_id,
+        })
+
+        if(data) {
+            let up=await Cart.findOneAndUpdate({product_id},{$inc:{quantity:1}})
+            res.status(201).json({message : "product added to cart" ,up})
+        }
+        else {
+            const newProduct = new Cart({user_id:a.userId,product_id})
+            await newProduct.save();
+            res.status(201).json({ message: 'Product added to Cart successfully' ,newProduct});
+        }
+    } catch(err) {
+        // Catch any errors and send a 500 status code for server issues
+        console.error(err);
+        res.status(500).json({message : "server-error"});
+    }
+    
+
+
+})
 
 // // Serve static files from the frontend build directory
 // app.use(express.static(path.join(__dirname, '../frontend/dist'))); // Adjusted to 'dist' folder

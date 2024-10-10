@@ -40,9 +40,42 @@ const MainKiranaItems = () => {
 
 
     // A function to handle button click
-    const send = (id) => {
-        console.log('Product ID:', id);  // Add logic for handling product addition
-        alert(`Added product with ID: ${id}`);
+    const send =async (id) => {
+        // console.log('Product ID:', id);  // Add logic for handling product addition
+        // alert(`Added product with ID: ${id}`);
+        // let a=
+        // e.preventDefault();
+        const token = localStorage.getItem('token'); // Get token from local storage
+
+        if (!token) {
+            return <Navigate to="/sign_in" />; // Redirect to sign-in if no token
+        }
+
+        try{
+            const response = await fetch("http://localhost:2000/api/add/cart" , {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ user_id:token , product_id:id })
+        });
+
+            const data = await response.json();
+
+            if (response.status === 201) {
+                alert('Product added to cart  successfully');
+                
+                // Redirect to the sign-in page or homepage
+            } else {
+                alert( 'An error occurred');
+            }
+
+        } catch(err) {
+            console.error('Error during signup:', err);
+            alert('An error occurred. Please try again later.');
+        }
+
+
     };
 
 
