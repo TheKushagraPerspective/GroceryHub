@@ -176,10 +176,36 @@ app.post("/api/add/cart",async(req,res)=>{
 })
 
 
-app.get("/api/cart" , async (req , res) => {
+app.post("/api/cart" , async (req , res) => {
+    const {user_id} = req.body;
+    let a=jwt.verify(user_id,'SECRET_KEY')
+    try{
 
+        // Check if user exists in the database by email and password
+        const data = await Cart.findOne({
+            user_id:a.userId
+        })
+
+        if(data) {
+            res.status(201).json({message : "product fetched from cart" ,data})
+        }
+        else {
+           
+            res.status(201).json({ message: 'There occur an error'});
+        }
+    } catch(err) {
+        // Catch any errors and send a 500 status code for server issues
+        console.error(err);
+        res.status(500).json({message : "server-error"});
+    }
 })
-
+app.get("/products/:abc",async (req,res)=>{
+    const cata = req.params.abc;
+    let data=await Product.find({_id:cata})
+    // console.log(data);
+    
+    res.status(200).json(data)
+})
 // // Serve static files from the frontend build directory
 // app.use(express.static(path.join(__dirname, '../frontend/dist'))); // Adjusted to 'dist' folder
 
