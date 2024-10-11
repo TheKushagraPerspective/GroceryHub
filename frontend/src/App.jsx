@@ -9,6 +9,7 @@ import Home from './components/home-page/home';
 import Contact from './components/contact-page/contact';
 import ProtectedRoute from './components/protectedRoute';    // Import the ProtectedRoute
 import MainKirana from './components/products/main_kirana';
+import Cart from './components/Cart/cart';
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
         <Route path='/contact' element={<Contact />} />
 
         <Route path='/main_kirana/:category' element={<MainKirana />} />
+
+        <Route path='/cart' element={<Cart />} />
 
       </Routes>
     </Router>

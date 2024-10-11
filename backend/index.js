@@ -106,7 +106,7 @@ app.get("/api/product/:cat",async (req,res)=>{
     let data=await Product.find({product_category:cata})
     // console.log(data);
     
-    res.json(data)
+    res.status(200).json(data)
     // return res.json();
 })
 
@@ -173,8 +173,10 @@ app.post("/api/add/cart",async(req,res)=>{
         console.error(err);
         res.status(500).json({message : "server-error"});
     }
-    
+})
 
+
+app.get("/api/cart" , async (req , res) => {
 
 })
 

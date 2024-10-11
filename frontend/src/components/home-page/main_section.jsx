@@ -32,7 +32,7 @@ const MainSection = () => {
                     {/* box 1 */}
                     <div className={`${styles.box1} ${styles["box"]}`}>
                         <div className={styles["box-content"]}>
-                            <p className={styles["shop-section-content"]}>Refined Oil</p>
+                            <p className={styles["shop-section-content"]}>Refined Oil & Ghee</p>
                             <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg1})`}}></div>
                             <p><Link to={"/main_kirana/Oil"}>see more</Link></p>
                         </div>
@@ -90,7 +90,7 @@ const MainSection = () => {
                             {/* box 2 */}
                             <div className={`${styles.box1} ${styles["box"]}`}>
                                 <div className={styles["box-content"]}>
-                                    <p className={styles["shop-section-content"]}>Pulses</p>
+                                    <p className={styles["shop-section-content"]}>Pulses & Rice</p>
                                     <div className={styles["box-img"]} style={{backgroundImage: `url(${bgImg6})`}}></div>
                                     <p><Link to={"/main_kirana/Pulses"}>see more</Link></p>
                                 </div>
