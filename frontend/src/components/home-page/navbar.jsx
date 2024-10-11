@@ -82,9 +82,6 @@ const Navbar = () => {
                         <div className={styles["panel-options"]}>
                             <p className={styles["border"]} onClick={handleOnHomeClick}>Home</p>
                             <p className={styles["border"]}>Today's Deals</p>
-                            <p className={styles["border"]}>Customer Service</p>
-                            <p className={styles["border"]}>Gift Cards</p>
-                            <p className={styles["border"]}>Sell</p>
                         </div>
 
                         <div className={`${styles.border} ${styles['panel-deal']}`}>

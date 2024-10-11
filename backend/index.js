@@ -175,48 +175,95 @@ app.post("/api/add/cart",async(req,res)=>{
     }
 })
 
-
-app.post("/api/cart" , async (req , res) => {
-    const {user_id} = req.body;
-    let a=jwt.verify(user_id,'SECRET_KEY')
-    try{
-
-        // Check if user exists in the database by email and password
-        const data = await Cart.findOne({
-            user_id:a.userId
-        })
-
-        if(data) {
-            res.status(201).json({message : "product fetched from cart" ,data})
-        }
-        else {
-           
-            res.status(201).json({ message: 'There occur an error'});
-        }
-    } catch(err) {
-        // Catch any errors and send a 500 status code for server issues
-        console.error(err);
-        res.status(500).json({message : "server-error"});
+app.post("/api/cart", async (req, res) => {
+    const { user_id } = req.body;
+    try {
+      let a = jwt.verify(user_id, 'SECRET_KEY');
+      const data = await Cart.find({ user_id: a.userId });
+    //   console.log("from api/cart");
+    //   console.log(data);
+  
+      if (data.length > 0) {
+        res.status(200).json({ message: "Products fetched from cart", data });
+      } else {
+        res.status(200).json({ message: "Cart is empty", data: [] });
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: "server-error" });
     }
-})
-app.get("/products/:abc",async (req,res)=>{
-    const cata = req.params.abc;
-    let data=await Product.find({_id:cata})
-    // console.log(data);
-    
-    res.status(200).json(data)
-})
-// // Serve static files from the frontend build directory
-// app.use(express.static(path.join(__dirname, '../frontend/dist'))); // Adjusted to 'dist' folder
+  });
+  
+  app.get("/products/:id", async (req, res) => {
+    try {
+      const product = await Product.findById(req.params.id);
+      if (product) {
+        res.status(200).json([product]);
+      } else {
+        res.status(404).json({ message: "Product not found" });
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: "server-error" });
+    }
+});
 
-// // The "catchall" handler: for any request that doesn't match one above,
-// // send back the React app.
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html')); // Serve the main HTML file
-// });
+  app.post("/api/cart/remove", async (req, res) => {
+    const { user_id, item_id } = req.body;
+    try {
+      let a = jwt.verify(user_id, 'SECRET_KEY');
+      const result = await Cart.findOneAndDelete({ _id: item_id, user_id: a.userId });
+      
+      if (result) {
+        res.status(200).json({ message: "Item removed from cart successfully" });
+      } else {
+        res.status(404).json({ message: "Item not found in cart" });
+      }
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: "server-error" });
+    }
+});
 
 
 
+// ... (existing code)
+
+const Order = require("./models/order");
+
+// ... (existing code)
+
+app.post("/api/submit-order", async (req, res) => {
+  const { user_id, name, email, address, country, pincode, cartItems, totalPrice, paymentMethod } = req.body;
+
+  try {
+    let decodedUserId = jwt.verify(user_id, 'SECRET_KEY').userId;
+
+    const newOrder = new Order({
+      user_id: decodedUserId,
+      name,
+      email,
+      address,
+      country,
+      pincode,
+      items: cartItems,
+      totalPrice,
+      paymentMethod,
+      status: 'Pending'
+    });
+
+    await newOrder.save();
+
+    // Clear the user's cart
+
+    res.status(201).json({ message: "Order submitted successfully", orderId: newOrder._id });
+  } catch (err) {
+    console.error('Error submitting order:', err);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+// ... (existing code)
 
 // Start the server
 app.listen(PORT, () => {
@@ -226,8 +273,3 @@ app.listen(PORT, () => {
 
 
 
-
-// {"product_name":"Amazon Brand - Vedaka Popular Unpolished Toor Dal | Naturally Rich Source of Protein | Naturally Cholesterol free| 2 kg Pack","product_price" : "398","product_description" : "Vedaka ensures the hygiene and quality of its Pulses through meticulous packaging and rigorous laboratory testing, adhering to the food safety standards set by FSSAI
-// Toor dal is used in many Indian delicacies and is rich in protein*, dietary fibre*
-// No artificial flavours. No preservatives
-// ALSO TRY: Try All Vedaka products which maintains Consistency in quality across the year","product_image":"https://m.media-amazon.com/images/I/916fA7fDMHL._SX679_.jpg","product_category":"Pulses","product_sub_category":"Daal","product_country":"India"}

@@ -10,6 +10,8 @@ import Contact from './components/contact-page/contact';
 import ProtectedRoute from './components/protectedRoute';    // Import the ProtectedRoute
 import MainKirana from './components/products/main_kirana';
 import Cart from './components/Cart/cart';
+import Payment from './components/payment_portal/payment';
+import OrderConfirmation from './components/payment_portal/order_confirmation';
 
 function App() {
 
@@ -34,6 +36,10 @@ function App() {
         <Route path='/main_kirana/:category' element={<MainKirana />} />
 
         <Route path='/cart' element={<Cart />} />
+
+        <Route path='/payment' element={<Payment />} />
+
+        <Route path='/order_confirmation' element={<OrderConfirmation />} />
 
       </Routes>
     </Router>
