@@ -92,6 +92,7 @@ const MainKiranaItems = () => {
                             </div>
                             <div className={styles["product-details"]}>
                                 <p>{data.product_name}</p>
+                                <p>Description :- {data.product_description}</p>
                                 <p>Price: ₹{data.product_price}</p>
                                 <button onClick={() => send(data._id)}>Add to Cart</button>
                             </div>

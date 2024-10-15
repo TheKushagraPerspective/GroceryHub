@@ -227,11 +227,9 @@ app.post("/api/cart", async (req, res) => {
 
 
 
-// ... (existing code)
 
 const Order = require("./models/order");
 
-// ... (existing code)
 
 app.post("/api/submit-order", async (req, res) => {
   const { user_id, name, email, address, country, pincode, cartItems, totalPrice, paymentMethod } = req.body;

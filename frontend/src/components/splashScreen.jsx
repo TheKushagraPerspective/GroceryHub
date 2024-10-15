@@ -1,11 +1,9 @@
-import React , {useState} from 'react';
+import React from 'react';
 import './splashScreen.css';
 
 
 const SplashScreen = () => {
 
-    const [email , setEmail] = useState("");
-    const [password , setPassword] = useState("");
     
 
     return(
@@ -19,7 +17,7 @@ const SplashScreen = () => {
                             </div>
                             <div className="explore-app">
                                 <button className="explore-app">
-                                    <a href="sign_in">Get Started</a>
+                                    <a href="home">Get Started</a>
                                 </button>
                             </div>
                     </div>

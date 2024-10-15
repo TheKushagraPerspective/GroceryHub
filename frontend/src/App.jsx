@@ -29,17 +29,17 @@ function App() {
 
         <Route path="/register" element={<Register />} />
 
-        <Route path='/home' element={ <ProtectedRoute> <Home /> {/* Protected component */} </ProtectedRoute> } />
+        <Route path='/home' element={ <Home/> } />
 
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<ProtectedRoute> <Contact /> {/* Protected component */} </ProtectedRoute>} />
 
-        <Route path='/main_kirana/:category' element={<MainKirana />} />
+        <Route path='/main_kirana/:category' element={<ProtectedRoute> <MainKirana /> {/* Protected component */} </ProtectedRoute>} />
 
-        <Route path='/cart' element={<Cart />} />
+        <Route path='/cart' element={<ProtectedRoute> <Cart /> {/* Protected component */} </ProtectedRoute>} />
 
         <Route path='/payment' element={<Payment />} />
 
-        <Route path='/order_confirmation' element={<OrderConfirmation />} />
+        <Route path='/order-confirmation' element={<OrderConfirmation />} />
 
       </Routes>
     </Router>

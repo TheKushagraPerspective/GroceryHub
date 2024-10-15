@@ -121,9 +121,6 @@ const Payment = () => {
               className={styles['form-input']}
             />
           </div>
-          <div className={styles['total-price']}>
-            Total Price: ₹{totalPrice.toFixed(2)}
-          </div>
           <div className={styles['payment-method']}>
             Payment Method: Cash on Delivery
           </div>
