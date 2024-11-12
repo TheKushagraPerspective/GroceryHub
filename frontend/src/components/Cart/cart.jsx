@@ -22,7 +22,7 @@ const Cart = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:2000/api/cart", {
+      const response = await fetch("https://groceryshop24-backend.onrender.com/api/cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const Cart = () => {
   const removeItem = async (itemId) => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:2000/api/cart/remove", {
+      const response = await fetch("https://groceryshop24-backend.onrender.com/api/cart/remove", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
