@@ -29,7 +29,7 @@ const Payment = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch('https://groceryshop24-backend.onrender.com/api/submit-order', {
+      const response = await fetch('https://localhost:2000/api/submit-order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

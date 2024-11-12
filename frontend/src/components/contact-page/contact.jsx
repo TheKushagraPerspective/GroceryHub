@@ -16,7 +16,7 @@ const Contact = () => {
     const handleOnContactForm = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://groceryshop24-backend.onrender.com/api/contact', {
+            const response = await fetch('https://localhost:2000/api/contact', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

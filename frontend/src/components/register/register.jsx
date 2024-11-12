@@ -14,7 +14,7 @@ const Register = () => {
         e.preventDefault();
 
         try{
-            const response = await fetch("https://groceryshop24-backend.onrender.com/api/register" , {
+            const response = await fetch("https://localhost:2000/api/register" , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
