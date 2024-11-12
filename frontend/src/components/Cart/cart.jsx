@@ -45,7 +45,7 @@ const Cart = () => {
   const removeItem = async (itemId) => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("https://localhost:2000/api/cart/remove", {
+      const response = await fetch("http://localhost:2000/api/cart/remove", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
