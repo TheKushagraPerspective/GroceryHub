@@ -22,7 +22,7 @@ const Cart = () => {
     }
 
     try {
-      const response = await fetch("https://groceryshop24-backend.onrender.com/api/cart", {
+      const response = await fetch("http://localhost:2000/api/cart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
