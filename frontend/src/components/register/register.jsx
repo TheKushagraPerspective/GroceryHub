@@ -2,6 +2,9 @@ import React , {useState} from 'react';
 import {Link , useNavigate} from 'react-router-dom';
 import styles from './register.module.css'
 
+const BASE_URL = "https://groceryhub-64l7.onrender.com/api"
+
+
 
 const Register = () => {
 
@@ -14,7 +17,7 @@ const Register = () => {
         e.preventDefault();
 
         try{
-            const response = await fetch("http://localhost:2000/api/register" , {
+            const response = await fetch(`${BASE_URL}/register` , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

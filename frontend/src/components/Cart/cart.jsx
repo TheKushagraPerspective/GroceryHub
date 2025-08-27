@@ -4,6 +4,8 @@ import { X } from "lucide-react";
 import Navbar from "../home-page/navbar";
 import styles from "./cart.module.css";
 
+const BASE_URL = "https://groceryhub-64l7.onrender.com/api"
+
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -22,7 +24,7 @@ const Cart = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:2000/api/cart", {
+      const response = await fetch(`${BASE_URL}/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +47,7 @@ const Cart = () => {
   const removeItem = async (itemId) => {
     const token = localStorage.getItem("token");
     try {
-      const response = await fetch("http://localhost:2000/api/cart/remove", {
+      const response = await fetch(`${BASE_URL}/cart/remove`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

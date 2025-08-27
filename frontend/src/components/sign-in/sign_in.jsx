@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import styles from "./sign_in.module.css"; // Use CSS Module
 
+const BASE_URL = "https://groceryhub-64l7.onrender.com/api"
+
+
 const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -11,7 +14,7 @@ const SignIn = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:2000/api/sign_in', {
+            const response = await fetch(`${BASE_URL}/sign_in`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

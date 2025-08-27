@@ -31,7 +31,7 @@ function App() {
 
         <Route path='/home' element={ <Home/> } />
 
-        <Route path='/contact' element={<ProtectedRoute> <Contact /> {/* Protected component */} </ProtectedRoute>} />
+        <Route path='/contact' element={<ProtectedRoute> <Contact /> {/* Protected components */} </ProtectedRoute>} />
 
         <Route path='/main_kirana/:category' element={<ProtectedRoute> <MainKirana /> {/* Protected component */} </ProtectedRoute>} />
 

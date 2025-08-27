@@ -3,6 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../home-page/navbar';
 import styles from './payment.module.css';
 
+const BASE_URL = "https://groceryhub-64l7.onrender.com/api"
+
+
 const Payment = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -29,7 +32,7 @@ const Payment = () => {
     const token = localStorage.getItem('token');
 
     try {
-      const response = await fetch('http://localhost:2000/api/submit-order', {
+      const response = await fetch(`${BASE_URL}/submit-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -2,6 +2,8 @@ import React , {useState} from 'react';
 import { Link } from 'react-router-dom';
 import styles from './contact.module.css';
 
+const BASE_URL = "https://groceryhub-64l7.onrender.com/api"
+
 
 const Contact = () => {
 
@@ -16,7 +18,7 @@ const Contact = () => {
     const handleOnContactForm = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:2000/api/contact', {
+            const response = await fetch(`${BASE_URL}/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

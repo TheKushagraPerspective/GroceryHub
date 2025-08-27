@@ -8,6 +8,9 @@ import Footer from '../home-page/footer';
 // import Body from './body'
 
 
+const BASE_URL = "https://groceryhub-64l7.onrender.com/api"
+
+
 
 const MainKiranaItems = () => {
     const [datas, setData] = useState([]);
@@ -18,7 +21,7 @@ const MainKiranaItems = () => {
     const handleProduct = async (e) => {
         // e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:2000/api/product/${category}`);
+            const response = await fetch(`${BASE_URL}/product/${category}`);
             const data = await response.json();
             if (response.status === 200) {
                 alert('Product fetched successfully');
@@ -52,7 +55,7 @@ const MainKiranaItems = () => {
         }
 
         try{
-            const response = await fetch("http://localhost:2000/api/add/cart" , {
+            const response = await fetch(`${BASE_URL}/add/cart` , {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
